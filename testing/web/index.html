@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <script src="eel.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <button id="starter" onclick="writeToFile()">Run</button>
+</header>
+    <br>
+    <main>
+        <div>
+            <textarea id="ide"></textarea>
+        </div>
+    </main>
+    <br>
+    <footer>
+        <div>
+            <textarea readonly id="console">|</textarea>
+        </div>
+    </footer>
+    <script>
+        async function writeToFile() {
+            var text = document.getElementById("ide").value;
+            await eel.get_code(text)();
+        }
+
+        async function updateFromPython() {
+            await eel.update_text()();
+        }
+
+        eel.expose(set_text);
+        function set_text(text) {
+            document.getElementById("console").value = text;
+        }
+    </script>
+</body>
+</html>

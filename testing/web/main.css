@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(12, 12, 12);
+}
+
+#ide {
+    font-size: 22px;
+    color: rgb(238, 146, 5);
+    width: 99%;
+    height: 550px;
+    background-color: rgb(17, 17, 17);
+}
+
+#console {
+    font-size: 16px;
+    color: rgb(200, 200, 200);
+    width: 99%;
+    height: 100px;
+    background-color: rgb(17, 17, 17);
+}
+
+#starter {
+    color: rgb(0, 200, 0);
+    background-color: rgb(12, 12, 12);
+}
